@@ -1,5 +1,5 @@
 <template>
-  <div class="ad img-fluid p-1">
+  <div class="img-fluid mt-5">
     <a href="">
       <img class="selectable" :src="ad.tall" alt="" :title="ad.title" />
     </a>
@@ -25,5 +25,7 @@ export default {
 
 
 // <style lang="scss" scoped>
-//
+img {
+  margin-left: 32px;
+}
 </style>

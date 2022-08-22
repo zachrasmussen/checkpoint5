@@ -5,9 +5,9 @@ export class Account {
     this.picture = data.picture || ''
     this.bio = data.bio || ''
     this.coverImg = data.coverImg || ''
-    this.github = data.github || ''
-    this.linkedin = data.linkedin || ''
-    this.resume = data.resume || ''
+    this.github = data.github || 'https://github.com/'
+    this.linkedin = data.linkedin || 'https://www.linkedin.com/'
+    this.resume = data.resume || 'https://thiscatdoesnotexist.com/'
     this.class = data.class || ''
     this.graduated = data.graduated || 'Not an alumni yet'
   }

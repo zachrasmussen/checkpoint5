@@ -40,7 +40,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="mx-auto my-3 col-md-10" v-for="p in posts" :key="p.id">
+      <div class="mx-auto my-3 col-md-7" v-for="p in posts" :key="p.id">
         <PostCard :post="p" />
       </div>
     </div>
