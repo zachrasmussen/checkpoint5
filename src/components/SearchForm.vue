@@ -1,6 +1,6 @@
 <template>
   <div class="search-form">
-    <form @submit.prevent="searchPosts">
+    <form @submit.prevent="handleSubmit()">
       <div class="input-group">
         <input class="form-control" type="text" required v-model="query" />
         <button class="btn btn-outline-primary" type="submit">

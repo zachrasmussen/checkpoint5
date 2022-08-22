@@ -1,12 +1,12 @@
-import { AppState } from "../AppState"
-import { api } from "./AxiosService"
-import { Ad } from "../models/Ad"
+import { AppState } from "../AppState.js"
+import { api } from "./AxiosService.js"
+import { Ad } from "../models/Ad.js"
 
 
-class Ads {
+class AdsService {
     async getAds() {
         const res = await api.get('api/ads')
-        AppState.ads = res.data.ads.map(a => new Ads(a))
+        AppState.ads = res.data.map(a => new Ad(a))
         console.log('[Getting Ads]', res.data.ads)
     }
 }

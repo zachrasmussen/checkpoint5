@@ -62,16 +62,33 @@
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { AppState } from "./AppState";
+import { adsService } from "./services/AdsService.js";
+import { logger } from "./utils/Logger.js";
+import Pop from "./utils/Pop.js";
+import AdsCard from "./components/AdsCard.vue";
 
 export default {
   name: "App",
   setup() {
+    async function getAds() {
+      try {
+        await adsService.getAds();
+      } catch (error) {
+        logger.error("[getting ads]", error);
+        Pop.error(error);
+      }
+    }
+    onMounted(() => {
+      getAds();
+    });
     return {
       appState: computed(() => AppState),
+      ads: computed(() => AppState.ads),
     };
   },
+  components: { AdsCard },
 };
 </script>
 <style lang="scss">
