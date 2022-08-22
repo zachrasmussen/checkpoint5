@@ -62,6 +62,7 @@ export default {
       posts: computed(() => AppState.posts),
       nextPage: computed(() => AppState.nextPage),
       previousPage: computed(() => AppState.previousPage),
+      getPosts,
 
       async changePage(url) {
         console.log("url", url);

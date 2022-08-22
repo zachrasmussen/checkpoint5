@@ -78,7 +78,7 @@
           resume="resume"
         />
       </div>
-      <!-- <div class="my-3 w-50">
+      <div class="my-3 w-50">
         <label for="classYear">classYear:</label>
         <input
           type="text"
@@ -95,7 +95,7 @@
           v-model="editable.graduated"
           graduated="graduated"
         />
-      </div> -->
+      </div>
 
       <div>
         <button type="submit" class="btn btn-primary w-100 mt-2">Save</button>

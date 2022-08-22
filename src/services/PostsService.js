@@ -56,12 +56,12 @@ class PostsService {
     }
 
     async getPostsBySearch(searchTerm) {
-        const res = await moviesApi.get('/search/movie', {
+        const res = await api.get('/api/posts?query=', {
             params: {
                 query: searchTerm
             }
         })
-        AppState.movies = res.data.results.map(m => new Movie(m))
+        AppState.posts = res.data.posts.map(p => new Post(p))
     }
 }
 

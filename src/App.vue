@@ -25,6 +25,7 @@
           <i class="mdi mdi-plus f-10 text-white"></i>
         </button>
       </div>
+      <SearchForm />
       <Login class="mx-5" @click="login" />
     </div>
     <div class="col-2 left-bar text-center mt-5">
