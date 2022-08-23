@@ -27,9 +27,9 @@
         <h3 class="text-dark creator-name text-center">{{ profile.name }}</h3>
         <div class="d-flex justify-content-center">
           <p class="text-dark creator-bio mb-2">
-            <p v-if="profile.graduated">Graduated</p>
-            <p v-else>Not Graduated</p>
-            {{ profile.class }}
+            <p v-if="profile.graduated">Graduated {{ profile.classYear }}</p>
+            <p v-else>Not Graduated</p> 
+            
           </p>
         </div>
         <p class="text-dark creator-bio mb-5">{{ profile.bio }}</p>

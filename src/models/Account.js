@@ -8,7 +8,7 @@ export class Account {
     this.github = data.github || 'https://github.com/'
     this.linkedin = data.linkedin || 'https://www.linkedin.com/'
     this.resume = data.resume || 'https://thiscatdoesnotexist.com/'
-    this.class = data.class || ''
+    this.classYear = data.class || ''
     this.graduated = data.graduated || ''
   }
 }

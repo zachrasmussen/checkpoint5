@@ -79,13 +79,8 @@
         />
       </div>
       <div class="my-3 w-50">
-        <label for="classYear">classYear:</label>
-        <input
-          type="text"
-          class="form-control"
-          v-model="editable.classYear"
-          classYear="classYear"
-        />
+        <label for="class">class:</label>
+        <input type="text" class="form-control" v-model="editable.class" />
       </div>
       <div class="my-3 w-50">
         <label for="graduated">graduated:</label>
