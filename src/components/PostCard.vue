@@ -71,8 +71,12 @@
       </div>
       <img class="img-fluid w-100 post-img" :src="post.imgUrl" alt="none" />
 
-      <div class="heart d-flex m-3 justify-content-end">
-        <i class="mdi mdi-cards-heart-outline text-end"></i>
+      <div class="heart d-flex m-3 pe-3 justify-content-end">
+        <!-- FIXME just access the ammount of people in 'like' -->
+        <i class="mdi mdi-cards-heart-outline text-end mx-2" @click="like"> </i>
+        <div class="like d-flex align-items-end mb-1">
+          {{ post.like.length }}
+        </div>
       </div>
     </div>
   </div>
@@ -101,6 +105,15 @@ export default {
       toggleEdit() {
         AppState.activePost = props.post;
         this.editing = !this.editing;
+      },
+
+      async like(postId) {
+        try {
+          await postsService.like(props.post.id);
+        } catch (error) {
+          console.error("[Add Like]", error);
+          Pop.error(error);
+        }
       },
 
       async deletePost(id) {
@@ -154,5 +167,10 @@ export default {
 .profile-picture:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 5px -2px #0aadd6;
+}
+
+.like {
+  font-size: 20px;
+  color: black;
 }
 </style>

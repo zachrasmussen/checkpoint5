@@ -27,7 +27,7 @@
         <h3 class="text-dark creator-name text-center">{{ profile.name }}</h3>
         <div class="d-flex justify-content-center">
           <p class="text-dark creator-bio mb-2">
-            {{ profile.graduated }} | {{ profile.class }}
+            {{ profile.graduated }}| {{ profile.class }}
           </p>
         </div>
         <p class="text-dark creator-bio mb-5">{{ profile.bio }}</p>
@@ -122,10 +122,12 @@ export default {
           })`
       ),
       posts: computed(() => AppState.profilePosts),
+      getPostsByCreatorId,
+
       async changePage(url) {
-        console.log("url", url);
+        console.log("[Change Page]", url);
         try {
-          await postsService.changePage(url);
+          await profilesService.changePage(url);
         } catch (error) {}
       },
     };

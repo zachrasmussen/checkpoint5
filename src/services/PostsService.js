@@ -17,6 +17,11 @@ class PostsService {
     async getPostsByCreatorId(id) {
         const res = await api.get(`api/profiles/${id}/posts`)
         AppState.profilePosts = res.data.posts.map(p => new Post(p))
+        AppState.nextPage = res.data.older
+        logger.log('next page', AppState.nextPage)
+        AppState.previousPage = res.data.newer
+        logger.log('previous page', AppState.previousPage)
+        //FIXME you don't save the buttons for newer and older here
     }
 
     async createPost(postFormData) {
@@ -56,12 +61,19 @@ class PostsService {
     }
 
     async getPostsBySearch(searchTerm) {
-        const res = await api.get('/api/posts?query=', {
-            params: {
-                query: searchTerm
-            }
+        const res = await api.get(`/api/posts?query=${searchTerm}`, {
+
         })
         AppState.posts = res.data.posts.map(p => new Post(p))
+    }
+
+    async like(id) {
+        // FIXME check readme and make appropriate post request
+        let res = await api.post(`/api/posts/${id}/like`)
+        let post = new Post(res.data)
+        let postIndex = AppState.posts.findIndex(p => p.id == id)
+        AppState.posts.splice(postIndex, 1, post)
+        AppState.post = AppState.post
     }
 }
 

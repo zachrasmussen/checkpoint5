@@ -10,7 +10,8 @@ export class Profile {
         this.linkedin = data.linkedin
         this.resume = data.resume
         this.class = data.class || '2022'
-        this.graduated = data.graduated || 'Graduated'
+        // FIXME turn or statement into turnary statement to represent graduated
+        // this.graduated = data.graduated || (graduated ? 'Graduated' : '')
         this.creatorId = data.creatorId
     }
 }
