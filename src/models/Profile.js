@@ -9,9 +9,11 @@ export class Profile {
         this.github = data.github
         this.linkedin = data.linkedin
         this.resume = data.resume
-        this.class = data.class || '2022'
+        // this.class = data.class || '2022'
         // FIXME turn or statement into turnary statement to represent graduated
-        // this.graduated = data.graduated || (graduated ? 'Graduated' : '')
+        // this.graduated = data.graduated || 'Graduated'
         this.creatorId = data.creatorId
     }
 }
+
+    // let graduated = graduated ? 'true' : 'false';
